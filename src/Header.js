@@ -5,20 +5,29 @@ import SearchIcon from "@material-ui/icons/Search";
 import ImageSearch from "@material-ui/icons/ImageSearch";
 import { IconButton } from "@material-ui/core";
 
-function Header({ inputtext, setInputtext, setSearchvalue , setCategoryvalue , categoryvalue}) {
+function Header({
+  inputtext,
+  setInputtext,
+  setSearchvalue,
+  setCategoryvalue,
+  categoryvalue,
+  setIsLoading,
+}) {
   const inputtextHandler = (e) => {
     e.preventDefault();
     setInputtext(e.target.value);
+    
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
     setSearchvalue(inputtext);
+   
   };
 
   const categoryvalueHandler = (e) => {
-    setCategoryvalue(e.target.value)
-  }
+    setCategoryvalue(e.target.value);
+  };
   return (
     <div className="header">
       {/*--------- logo--------- */}
@@ -54,7 +63,12 @@ function Header({ inputtext, setInputtext, setSearchvalue , setCategoryvalue , c
 
       {/*----------Category----- */}
       <div className="header-category">
-        <select name="category" id="category" defaultValue="" onChange={categoryvalueHandler}>
+        <select
+          name="category"
+          id="category"
+          defaultValue=""
+          onChange={categoryvalueHandler}
+        >
           <option value="">-- Category --</option>
           <option value="backgrounds">Backgrounds</option>
           <option value="fashion">Fashion</option>

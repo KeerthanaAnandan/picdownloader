@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 20px;
+  width: 100vw;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16), 0 2px 3px rgba(0, 0, 0, 0.23);
 }
 /*logo---------------------*/
@@ -67,6 +68,7 @@ select {
   .header {
     flex-direction: column !important;
     align-items: flex-start;
+    width: 100vw;
   }
   /* setting search bar to cover full width */
   form {
@@ -74,13 +76,24 @@ select {
     width: 400px;
     margin-top: 5px;
   }
+  input {
+    border: none !important;
+    border-color: transparent !important;
+    padding: 5px;
+    width: 200px !important;
+    background: transparent !important;
+    outline: none;
+    font-size: large;
+  }
   .header-category {
+    outline: none;
     margin: 5px 0 0 auto;
     min-height: 20px;
     padding: 2px 10px;
-    border: 0.2px solid rgba(17, 17, 17, 0.1);
+    border: transparent;
   }
   .header-category > select {
+    outline: none !important;
     font-size: 12px !important;
   }
 }
