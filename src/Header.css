@@ -68,7 +68,7 @@ select {
   .header {
     flex-direction: column !important;
     align-items: flex-start;
-    width: 100vw;
+    width: 100vw !important;
   }
   /* setting search bar to cover full width */
   form {
