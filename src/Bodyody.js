@@ -11,8 +11,8 @@ function download(url, fileName) {
 }
 //----------------------------------
 
-function Bodyody({ items, img, tags }) {
-  const alt = tags.split(",")[0];
+function Bodyody({ items }) {
+  //const alt = tags.split(",")[0];
   const [imageSatus, setImageSatus] = useState(false);
   return (
     <div className="body-image-area">
@@ -23,15 +23,16 @@ function Bodyody({ items, img, tags }) {
           <img
             className={`image  ${!imageSatus && "d-none"}`}
             src={single.webformatURL}
-            alt={alt}
             onLoad={() => setImageSatus(true)}
           />
 
           {/* If the image is loaded then add className "d-none" to Image tag */}
 
           <IconButton
-            className="imgCard__button"
-            onClick={() => download(img, alt)}
+            className="image-button"
+            onClick={() =>
+              download(single.webformatURL, single.tags.split(",")[0])
+            }
           >
             <SaveAlt />
           </IconButton>

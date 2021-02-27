@@ -24,8 +24,9 @@ function App() {
     setItems(data.hits);
     console.log(data.hits);
     setIsLoading(false);
-  };
 
+  };
+console.log(items);
   return (
     <div>
       <Header
@@ -40,7 +41,13 @@ function App() {
         <div class="boxLoading"></div>
       ) : (
         <div className="App">
-          <Bodyody items={items} setItems={setItems} />
+         <Bodyody
+            items={items}
+            imgs={items.webformatURL}
+            tags={items.tags}
+            setItems={setItems}
+          />
+
         </div>
       )}
     </div>

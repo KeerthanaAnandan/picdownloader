@@ -26,12 +26,15 @@
 .image:hover {
   cursor: pointer;
 }
-.imgCard__button {
+.image-button {
   position: absolute !important;
   bottom: 5px !important;
   right: 5px !important;
-  color: antiquewhite !important;
+  color: pink !important;
   z-index: 5;
+}
+.d-none {
+  display: none !important;
 }
 
 @media only screen and (max-width: 650px) {
