@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { IconButton } from "@material-ui/core";
 import { SaveAlt } from "@material-ui/icons";
+//import DialogTitle from "@material-ui/core/DialogTitle";
+//import Dialog from "@material-ui/core/Dialog";
 
 import FileSaver from "file-saver";
 
@@ -13,21 +15,24 @@ function download(url, fileName) {
 
 function Bodyody({ items }) {
   //const alt = tags.split(",")[0];
-  const [imageSatus, setImageSatus] = useState(false);
+  // const [imageSatus, setImageSatus] = useState(false);
   return (
     <div className="body-image-area">
-      {/* className "d-none" hides the element  */}
-      {/* If the image is not loaded thn add className "d-none" to Image tag */}
+      {/* <Dialog
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+     </DialogTitle> */}
+
       {items.map((single) => (
-        <div>
+        <div key={single.id} className="image-card">
           <img
-            className={`image  ${!imageSatus && "d-none"}`}
+            className="image"
             src={single.webformatURL}
-            onLoad={() => setImageSatus(true)}
+            // onLoad={() => setImageSatus(true)}
           />
-
-          {/* If the image is loaded then add className "d-none" to Image tag */}
-
           <IconButton
             className="image-button"
             onClick={() =>
@@ -38,6 +43,7 @@ function Bodyody({ items }) {
           </IconButton>
         </div>
       ))}
+      {/*</Dialog>*/}
     </div>
   );
 }

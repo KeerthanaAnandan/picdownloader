@@ -22,11 +22,10 @@ function App() {
     );
     const data = await items.json();
     setItems(data.hits);
-    console.log(data.hits);
-    setIsLoading(false);
 
+    setIsLoading(false);
   };
-console.log(items);
+  console.log(items);
   return (
     <div>
       <Header
@@ -41,13 +40,12 @@ console.log(items);
         <div class="boxLoading"></div>
       ) : (
         <div className="App">
-         <Bodyody
+          <Bodyody
             items={items}
             imgs={items.webformatURL}
             tags={items.tags}
             setItems={setItems}
           />
-
         </div>
       )}
     </div>
