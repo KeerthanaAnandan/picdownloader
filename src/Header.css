@@ -75,7 +75,7 @@ select {
   /* setting search bar to cover full width */
   form {
     flex: 1;
-    width: 100vw;
+    width: 90vw;
     margin-top: 5px;
   }
   input {
